@@ -1,188 +1,37 @@
 doctype html
+
+// @author: Sid Verma
+// @email: sid@sidverma.net
+
 html(lang='')
   head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='keywords', content='Sid Verma, Siddhartha Verma, Jaypee University of Engineering and Technology, JUET, India')
-    meta(name='description', content='I am a developer and I love building cool new stuff.')
-    meta(name='author', content='Sid Verma')
-    meta(content='True', name='HandheldFriendly')
-    meta(name='MobileOptimized', content='width')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Sid Verma
-    link(rel='shortcut icon', href='img/favicon_s.png', type='image/png')
-    link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
-    //- link(href='css/font-awesome.min.css', rel='stylesheet')
-    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
-    //- link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/sidverma.min.css')
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700', rel='stylesheet', type='text/css')
-    //- link(href='css/offline-dev-fonts/opensans.css', rel='stylesheet', type='text/css')
-    //-Tracking code
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-49246827-1', 'sidverma.net');
-      ga('send', 'pageview');
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-  .header.content-container.cover-size.bg
-    .dtable#upper
-      .dtable-cell.vertical-bottom
-        .pic
-          img(src='img/sid.jpg')
-        span.welcome
-          span.hi
-            | Hi
-          span.name
-            | I'm Sid Verma.
-    .dtable#lower
-      .dtable-cell.vertical-middle
-        .navbar
-          ul.navbar-nav.nav
-            li
-              a.nav-item(href='#intro') About
-            li
-              a.nav-item(href='http://blog.sidverma.net') Blog
-            li
-              a.nav-item(href='#projects') Projects
-            li
-              a.nav-item(href='/Resume.pdf') Resume
-            li
-              a.nav-item(href='#contact') Contact
-        
-
+    include includes/head
+  
   body
-    #intro.content-container.cover-size
-      .content.text-center
-        p
-          |Hi. My name is 
-          strong Siddhartha Verma
-          | . People call me Sid.
-        p
-          | I'm a Computer Science undergraduate at 
-          a(href='http://juet.ac.in') Jaypee University of Engineering and Technology
-          |, India.
-        p I love to build cool new things, mostly for the web.
-        p I am interested in Graphic Design and Photography as well.
-        p
-          | Feel free to check out my 
-          a(href='Resume.pdf') Resume
-          | , or my 
-          a(href='http://blog.sidverma.net') blog
-          | , and 
-          a(href='#contact') email 
-          | me if you like what you see.
-        .social-icons
-          a(href='http://www.facebook.com/profile.php?id=710763230')#fb
-            i.fa.fa-facebook
-          a(href='http://twitter.com/mavidser')#tw
-            i.fa.fa-twitter
-          a(href='http://github.com/mavidser')#gh
-            i.fa.fa-github
-          a(href='http://google.com/+SidVerma')#gp
-            i.fa.fa-google-plus
-          a(href='http://linkedin.com/in/mavidser')#li
-            i.fa.fa-linkedin-square
-      .down-arrow.col-xs-4.col-xs-offset-4
-        h4
-          a(href='#projects')#intro
-            i.fa.fa-angle-down.fa-2x
-              
-    #projects.content-container.gray-bkg
-      .content.big-content
-        .content-inner
-          h2.section-header.text-center.main-title.white
-            i.fa.fa-code
-            span Projects
-          .row
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #app.thumbnail
-                  a(href='https://github.com/mavidser/attendance-viewer')
-                    .thumb-image-container
-                      img.thumb-image(src='img/app.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/attendance-viewer') Attendance Viewer
-                    p.text-center
-                      | An android app for displaying class attendance.
-                      br
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #api.thumbnail
-                  a(href='https://github.com/mavidser/fetch-attendance-from-webkiosk')
-                    .thumb-image-container
-                      img.thumb-image(src='img/api.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/fetch-attendance-from-webkiosk') Webkiosk API
-                    p.text-center A REST API for my college portal.
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #note.thumbnail
-                  a(href='https://github.com/mavidser/simplynote')
-                    .thumb-image-container
-                      img.thumb-image(src='img/note.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/simplynote') Simplynote
-                    p.text-center A basic note-taking app built ages ago.
-          .row
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #search.thumbnail
-                  a(href='https://github.com/mavidser/hashtag-search')  
-                    .thumb-image-container
-                      img.thumb-image(src='img/search.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/hashtag-search') Hashtag Search
-                    p.text-center Search any hashtag across multiple social networks.
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #picard.thumbnail
-                  a(href='https://github.com/mavidser/picard')
-                    .thumb-image-container
-                      img.thumb-image(src='img/picard.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/picard') Picard
-                    p.text-center A platform for students to showcase their work online.
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #picard.thumbnail
-                  a(href='https://github.com/mavidser/terminal-twitter')
-                    .thumb-image-container
-                      img.thumb-image(src='img/tt.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/terminal-twitter') Terminal Twitter
-                    p.text-center A CLI to Twitter.
-          .row
-            .col-sm-12.col-md-4
-              .thumbnail-container
-                #input.thumbnail
-                  a(href='https://github.com/mavidser/SublimeInput')  
-                    .thumb-image-container
-                      img.thumb-image(src='img/input.jpg', alt='...')
-                  .caption
-                    h6.section-header.text-center.thumb-title
-                      a(href='https://github.com/mavidser/SublimeInput') SublimeInput
-                    p.text-center Search any hashtag across multiple social networks.
-    #contact.content-container
-      .content.text-center
-        p
-          | Feel free to contact me on 
-          a(href='mailto:sid@sidverma.net') sid@sidverma.net
-  footer.gray-bkg
-    .content-inner
-      p Created by Sid Verma. Powered by Bootstrap, jQuery.
-  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-  //- script(src='js/jquery.min.js')
-  script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
-  //- script(src='js/bootstrap.min.js')
-  script(src='js/custom.min.js')
+    section.top#top
+      .center
+        .row.nav
+          .col-md-3
+            strong @mavidser
+          .col-md-3
+            a(href="#top") About
+          .col-md-3
+            a(href="#top") Projects
+          .col-md-3
+            a(href="#top") Resume
+
+        .hi
+          h1 Hi. I am Sid. I am a maker of nice things.
+
+    section#about
+      .container
+        include includes/about
+
+    section#projects
+      .container
+        include includes/projects
+
+    section#footer
+      include includes/footer
+
+  include includes/scripts
