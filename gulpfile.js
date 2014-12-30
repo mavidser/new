@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
   return gulp.src('src/styles/main.scss')
     .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('> 5%', 'last 2 version', 'ie 9'))
+    .pipe(autoprefixer('> 5%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('dist/styles'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
@@ -66,7 +66,7 @@ gulp.task('watch', function() {
   gulp.watch('src/scripts/**/*.js', ['scripts']);
  
   // Watch jade files
-  gulp.watch('src/*.jade', ['templates']);
+  gulp.watch('src/**/*.jade', ['templates']);
  
   // Create LiveReload server
   livereload.listen();

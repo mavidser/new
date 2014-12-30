@@ -8,28 +8,30 @@ html(lang='')
     include includes/head
   
   body
-    section.top#top
+    section.cover#top
       .center
         .row.nav
           .col-md-3
             strong @mavidser
           .col-md-3
-            a(href="#top") About
+            a(href="#about") About
           .col-md-3
-            a(href="#top") Projects
+            a(href="#projects") Projects
           .col-md-3
-            a(href="#top") Resume
-
+            a(href="/Resume.pdf") Resume
         .hi
-          h1 Hi. I am Sid. I am a maker of nice things.
+          h1 Hi. I am Sid. I am 
+            span.job a maker of nice things.
 
-    section#about
-      .container
-        include includes/about
+      a(href="#about")
+        i.fa.fa-chevron-circle-down.down-arrow
+
+
+    section.cover#about
+      include includes/about
 
     section#projects
-      .container
-        include includes/projects
+      include includes/projects
 
     section#footer
       include includes/footer
