@@ -4,18 +4,18 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     jade = require('gulp-jade'),
+    plumber = require('gulp-plumber'),
     del = require('del');
 
 // Styles
 gulp.task('styles', function() {
   return gulp.src('src/styles/main.scss')
+    .pipe(plumber())
     .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer('> 5%', 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('dist/styles'))
@@ -28,6 +28,7 @@ gulp.task('styles', function() {
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/main.js')
+    .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
@@ -41,6 +42,7 @@ gulp.task('scripts', function() {
 // Templates
 gulp.task('templates', function() {
   return gulp.src('src/index.jade')
+    .pipe(plumber())
     .pipe(jade())
     .pipe(gulp.dest('.'))
     .pipe(notify({ message: 'Templates task complete' }));
