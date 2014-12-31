@@ -1,9 +1,97 @@
+
+/* Bootstrap Components */
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-20p {
+    float: left;
+  }
+  .col-md-20p {
+    width: 20%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+}
+.row:before,
+.row:after {
+  clear: both;
+  display: table;
+  content: " ";
+}
+
 /* Variables */
 
 $font-stack: 'Lato', sans-serif;
 $gray: #2d2d2d;
+$mid-gray: #444444;
 $light-gray: #777777;
-$lighter-gray: #aaaaaa;
+$lighter-gray: #999999;
+$lightest-gray: #eeeeee;
 $white: #fff;
 $black: #000;
 
@@ -61,9 +149,13 @@ strong {
 a {
   color: $black;
   text-decoration: none;
-  &:hover, &:visited, &:focus {
+  &:hover, &:focus {
     color: $gray;
     text-decoration: none;
+  }
+  &:visited {
+    color: $black;
+    text-decoration: none; 
   }
 }
 
@@ -92,7 +184,7 @@ section {
 /* Top Section */
 
 .nav {
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
   color: $white;
   letter-spacing: 1px;
@@ -108,7 +200,7 @@ section {
 }
 .hi > h1 {
   font-weight: 400;
-  width: 700px;
+  max-width: 700px;
   margin: 25px auto;
   padding: 0 25px;
   text-align: left;
@@ -135,22 +227,76 @@ section {
 
 #about {
   font-size: 0.8em;
+  i.down-arrow {
+    color: #aaa;
+    font-size: 2.5em;
+    &:hover {
+      color: $lighter-gray;
+    }
+  }
+}
+.social {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 55px;
 }
 i.fa.social-icon {
   color: $light-gray;
   font-size: 2em;
-  margin: 50px 40px 0px 40px;
   transition: all 0.2s ease-in-out;
   &:hover {
     color: $gray;
   }
 }
-p.email {
-  margin-top: 50px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
+
+/* Projects Section */
+
+#projects {
+  background: $mid-gray;
+  padding: 50px 0px;
+  color: #777;
+  h2 {
+    color: $lighter-gray;
+  }
+  .row {
+    margin: 100px 0;
+  }
+}
+.project {
+  margin: 0 auto;
+  max-width: 300px;
+  h3 {
+    color: #aaa;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px;
+    margin-bottom: 33px;
+  }
+  span {
+    color: #ccc;
+    font-size: 0.75em;
+    font-weight: 400;
+  }
+  margin-bottom: 6px;
+}
+
+/* Contact Section */
+
+#contact {
+  padding: 75px;
+  color: $light-gray;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+/* Footer Section */
+
+#footer {
+  background: $gray;
+  padding: 50px;
+  color: $white;
+  font-size: 0.75em;
+  font-weight: 400;
 }

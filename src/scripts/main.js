@@ -28,14 +28,6 @@ function rotate_text() {
   
 }
 
-$('.social-email').on("mouseenter", function () {
-  $('.email').css('opacity','1');
-})
-
-$('.social-email').on("mouseleave", function () {
-  $('.email').css('opacity','0');
-})
-
 $(document).ready(function () {
   $(".cover").height($(window).height());
   rotate_text()

@@ -9,31 +9,38 @@ html(lang='')
   
   body
     section.cover#top
-      .center
-        .row.nav
-          .col-md-3
-            strong @mavidser
-          .col-md-3
-            a(href="#about") About
-          .col-md-3
-            a(href="#projects") Projects
-          .col-md-3
-            a(href="/Resume.pdf") Resume
-        .hi
-          h1 Hi. I am Sid. I am 
-            span.job a maker of nice things.
+      .container.center
+          .row.nav
+            .col-md-3
+              strong @mavidser
+            .col-md-3
+              a(href="#about") About
+            .col-md-3
+              a(href="#projects") Projects
+            .col-md-3
+              a(href="/Resume.pdf") Resume
+          .hi
+            h1 Hi. I am Sid. I am 
+              span.job a maker of nice things.
 
-      a(href="#about")
-        i.fa.fa-chevron-circle-down.down-arrow
+        a(href="#about")
+          i.fa.fa-chevron-circle-down.down-arrow
 
 
-    section.cover#about
+    section.cover#about.container
       include includes/about
 
     section#projects
-      include includes/projects
+      .container
+        include includes/projects
+
+    section#contact
+      .container
+        p Feel free to contact me at 
+          a(href="mailto:sid@sidverma.net") sid@sidverma.net
 
     section#footer
-      include includes/footer
+      .container
+        include includes/footer
 
   include includes/scripts
